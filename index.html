@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yogesh Bhai Ka Birthday Roast</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg1:#fff1b8;--bg2:#ffc2e2;--card:#ffffff;--ink:#2b1b3d;--accent:#e6155f;--accent2:#7c4dff;--pop:#ffe14d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a1b4d;--bg2:#4d1b3a;--card:#2f2347;--ink:#fdf3ff;--accent:#ff5c9a;--accent2:#9d7bff;--pop:#ffd93d}}
+:root[data-theme="dark"]{--bg1:#2a1b4d;--bg2:#4d1b3a;--card:#2f2347;--ink:#fdf3ff;--accent:#ff5c9a;--accent2:#9d7bff;--pop:#ffd93d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:"Comic Sans MS","Chalkboard SE",system-ui,sans-serif;color:var(--ink);background:linear-gradient(135deg,var(--bg1),var(--bg2));background-attachment:fixed;text-align:center;overflow-x:hidden}
+.wrap{max-width:640px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:clamp(1.7rem,7vw,2.6rem);margin:10px 0;line-height:1.2}
+h1 span{color:var(--accent)}
+.big{font-size:4.5rem;display:inline-block;animation:bounce 1.2s infinite}
+@keyframes bounce{50%{transform:translateY(-14px) rotate(8deg)}}
+.sub{font-size:1.05rem;opacity:.92;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{border:3px solid var(--ink);background:var(--card);color:var(--ink);border-radius:18px;padding:16px 8px;font:inherit;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .1s}
+.btn:hover{transform:rotate(-2deg) scale(1.04)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn i{display:block;font-style:normal;font-size:2.2rem;margin-bottom:4px}
+.back{background:var(--pop);margin:0 0 16px;padding:10px 18px;display:inline-block}
+.joke{background:var(--card);border:3px solid var(--ink);border-radius:16px;padding:14px;margin:12px 0;text-align:left;cursor:pointer;box-shadow:4px 4px 0 var(--accent2)}
+.joke .q{font-weight:700}
+.joke .a{display:none;margin-top:10px;padding-top:10px;border-top:2px dashed var(--accent);color:var(--accent);font-weight:700}
+.joke.open .a{display:block;animation:pop .3s}
+.joke .hint{font-size:.8rem;opacity:.7;margin-top:6px}
+.joke.open .hint{display:none}
+@keyframes pop{from{transform:scale(.8);opacity:0}}
+.page{display:none}.page.show{display:block}
+.fall{position:fixed;top:-40px;font-size:1.8rem;pointer-events:none;animation:fall linear forwards;z-index:9}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.foot{margin-top:30px;font-size:.9rem;opacity:.85}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div id="home" class="page show">
+  <div class="big">🎂</div>
+  <h1>Happy Birthday <span>Yogesh Bhai!</span> 🥳</h1>
+  <p class="sub">Aaj ke din Taj Hotel ka bill tumhara, aur izzat ka bill hamara! 😏<br>Neeche ke buttons pe click karo aur apna post-mortem dekho.</p>
+  <div class="grid" id="grid"></div>
+  <button class="btn" style="margin-top:16px;width:100%" id="party">🎉 Party Mode ON 🎉</button>
+</div>
+<div id="pages"></div>
+<div class="foot">Made with ❤️ (aur thodi si badtameezi) by tumhare dost 😜<br>Disclaimer: Sab mazak hai, Yogesh bhai dil pe mat lena, party pe lena 🏨</div>
+</div>
+<script>
+var P=[
+{id:"p1",e:"🧠",t:"Samajhdari Baba",j:[
+["Yogesh bhai jab samajhdari ki baatein karte hain to sab chup ho jate hain.","Samajh ke nahi, ye soch ke ki ab ye kab chup hoga. 🤐"],
+["Yogesh bhai ne ek din bola: Zindagi me balance zaruri hai.","Aur khud 3 ghante se hamare WhatsApp group ko unbalance karke baithe hain. ⚖️"],
+["Yogesh bhai ki advice ek dum Google jaisi hai.","Bina maange mil jati hai, aur kaam ki kabhi nahi hoti. 🔍"],
+["Hum sab problem lekar jate hain to Yogesh bhai bolte hain: Ye to simple hai.","Aur phir 40 minute baad hum pehle se zyada confused ho jate hain. 😵"],
+["Yogesh bhai ka gyaan itna zyada hai ki...","Gyaan ko bhi lagta hai: bhai thoda mujhe bhi saans lene de. 📚"]]},
+{id:"p2",e:"☕",t:"Aesthetic King",j:[
+["Yogesh bhai ko chai bhi aesthetic chahiye.","Kulhad me, golden hour me, side se photo ke saath. Chai thandi ho jaye par photo perfect honi chahiye. ☕📸"],
+["Yogesh bhai ki aesthetic ki definition:","Jo cheez kharab dikhe use filter laga do, jo cheez kharab ho use caption laga do. ✨"],
+["Yogesh bhai ne bola: Mai simple living high thinking wala insaan hu.","Bas living simple hai, thinking Taj Hotel wali hai. 🏨"],
+["Yogesh bhai ka room dekho:","Lights fairy wali, diary khali, aur chehre pe 'mai gehra insaan hu' wali expression. 🪔"],
+["Yogesh bhai ke pass beige color ke kapde hain, beige hi mood, beige hi personality.","Aur baaki duniya ko kehte hain: tum log color blind ho. 🤎"]]},
+{id:"p3",e:"💍",t:"Shaadi Wali Kahani",j:[
+["Ek baar Yogesh bhai ki shaadi mama ki ladki ke saath hote hote reh gayi thi.","Kyunki us time wo bachha tha aur abhi bhi gaur karo to... 🍼"],
+["Us time ke Yogesh bhai ko shaadi ka matlab pata tha?","Haan, bas itna ki wahan laddoo milte hain aur sabke saamne dulhe ko dhakka nahi dete. 🍬"],
+["Agar wo shaadi ho jati to?","Aaj Yogesh bhai ghar pe hoti 'aesthetic' wali wife se bhi zyada gyaan lene wali biwi. 😆"],
+["Us shaadi ke time Yogesh bhai sherwani me kaise lagte?","Sherwani ke andar se sirf topi dikhti, baaki sab sherwani hi hoti. 👑"],
+["Yogesh bhai ko aaj bhi lagta hai ki wo shaadi unki life ka ek mauka tha.","Par sach ye hai ki us din sabse zyada khush wahi tha jisne laddoo khaye. 😂"]]},
+{id:"p4",e:"📚",t:"Sarkari Naukri Mission",j:[
+["Yogesh bhai ab government exam ki tayari kar rahe hain.","Aur tayari itni serious hai ki khud ke birthday pe bhi pooch rahe the: Is din ka syllabus kya hai? 📖"],
+["Yogesh bhai ka routine:","5 baje uthna, 6 baje motivation video dekhna, 7 baje wapas so jana. 🛌"],
+["Yogesh bhai ne bola: Ab sirf padhai pe focus hai.","Aur focus itna hai ki aankhein bhi band hokar focus karti hain. 😴"],
+["Result aane pe Yogesh bhai kya karenge?","Sabse pehle bolenge: Maine to pehle hi bola tha, meri mehnat rang layegi! 🎯"],
+["Government job lagne ke baad Yogesh bhai ki pehli demand:","Ghar pe ek aur 'Government Approved' wala gyaan dene ka licence. 📜"]]},
+{id:"p5",e:"🚀",t:"Sapne Bade, Height Chhoti",j:[
+["Yogesh bhai ke sapne itne bade hain ki...","Aasman bhi bolta hai: bhai neeche se dikh nahi rahe, thoda upar aao. 🌌"],
+["Yogesh bhai ne bola: Mai ek din bahut unchaiyon tak jaunga.","Ek hi problem hai: lift ke button tak pahunchne me bhi stool chahiye. 🛗"],
+["Yogesh bhai ki height aur sapno ka comparison:","Sapne Burj Khalifa jaise, height Bournvita ke dabbe jaisi. 🏙️"],
+["Yogesh bhai bhaari bhaari sapne dekhte hain.","Par sote time unka sapna bhi bolta hai: Bhai thoda neeche utar ke dekh le zindagi. 😅"],
+["Group photo me Yogesh bhai ko hamesha sabse aage kyun khada karte hain?","Taaki peeche wale unhe dekh bhi sake aur photo me jagah bhi kam lage. 📸"]]},
+{id:"p6",e:"👑",t:"Boss Mode ON",j:[
+["Yogesh bhai ko lagta hai sab kuch unke hisab se chalna chahiye.","Aur sach ye hai ki Sun bhi unke hisab se nahi chalta, isliye roz subah late uthte hain. ☀️"],
+["Yogesh bhai ka favourite sentence:","Mai bol raha hu na, aise hi hoga! Aur phir hota wahi hai jo baaki sab chahte hain. 🙃"],
+["Yogesh bhai logo ko bohot halke me lete hain.","Itna halke me ki kabhi kabhi hawa bhi unhe dekh ke bolti hai: bhai tum se bhaari to main hu. 🍃"],
+["Yogesh bhai ka plan:","Sab ko leader banana hai, aur leader khud banna hai. Bas follower koi nahi mil raha. 🚩"],
+["Yogesh bhai agar PM bane to pehla order:","Sabka alarm unke time pe ho aur chai unke hisab se garam ho. 🏛️"]]},
+{id:"p7",e:"🏨",t:"Taj Hotel Party",j:[
+["Yogesh bhai ne bola: Party Taj Hotel me hogi.","Hum sab ne pucha: Taj Hotel ya Taj Mahal? Kyunki dono me tum bahar hi khade rahoge. 😂"],
+["Taj Hotel ka menu dekh ke Yogesh bhai ka reaction:","Arre bhai, aesthetic bahut hai. Bill kaun dega? Mai to government job ke baad dunga! 💸"],
+["Taj Hotel ka waiter Yogesh bhai ko dekh ke bola:","Sir, kya aap order dene aaye hain ya reservation ki line me khade hain? 🤵"],
+["Yogesh bhai ka Taj plan:","Entry me aesthetic photo, beech me gyaan, aur end me bill ke time washroom. 🚻"],
+["Sach ye hai ki...","Party agar sach me Taj me hui to hum sab Yogesh bhai ko 'Raja Sahab' kahenge. Warna sirf 'Yogesh bhai, kal kaun sa exam hai?' 🤣"]]},
+{id:"gift",e:"🎁",t:"Birthday Gift",j:[
+["Gift kya mila?","Dost ka gift ye website hai. Free hai, return nahi hoga. 🎀"],
+["Gift ka receipt maangoge?","Receipt me likha tha: Izzat Kam Daam. 🧾"]]}
+];
+var gm=["Gift khol diya... andar ek dabba tha, usme ek sticker: Taj Hotel ka bill khud bhar le bhai 🤣","Andar se aawaz aayi: Yogesh bhai, party kab? 🗣️","Gift me ek aaina tha, taaki tum apni height aur attitude dono dekh sako! 🪞"];
+var grid=document.getElementById("grid"),pages=document.getElementById("pages");
+P.forEach(function(p){
+var b=document.createElement("button");b.className="btn";b.innerHTML="<i>"+p.e+"</i>"+p.t;
+b.onclick=function(){go(p.id);rain(["🎉","🎈"],10)};grid.appendChild(b);
+var d=document.createElement("div");d.id=p.id;d.className="page";
+d.innerHTML='<button class="btn back">⬅ Wapas</button><h1>'+p.e+" "+p.t+"</h1>";
+d.querySelector(".back").onclick=function(){go("home")};
+if(p.id==="gift"){var g=document.createElement("div");g.className="big";g.style.cursor="pointer";g.textContent="🎁";
+var gt=document.createElement("p");gt.style.cssText="font-weight:700;color:var(--accent)";
+var hp=document.createElement("p");hp.textContent="Gift pe click karo, asli gift andar hai!";
+g.onclick=function(){gt.textContent=gm[Math.floor(Math.random()*gm.length)];rain(["🎁","🎉"],20)};
+d.appendChild(g);d.appendChild(hp);d.appendChild(gt)}
+p.j.forEach(function(j){var c=document.createElement("div");c.className="joke";
+c.innerHTML='<div class="q"></div><div class="a"></div><div class="hint">👆 Click karo punchline ke liye</div>';
+c.children[0].textContent=j[0];c.children[1].textContent="👉 "+j[1];
+c.onclick=function(){c.classList.add("open");rain(["😂","🤣","💀"],6)};d.appendChild(c)});
+pages.appendChild(d)});
+function go(id){document.querySelectorAll(".page").forEach(function(p){p.classList.remove("show")});
+document.getElementById(id).classList.add("show");window.scrollTo(0,0);location.hash=id==="home"?"":id}
+function rain(a,n){for(var i=0;i<n;i++){var e=document.createElement("div");e.className="fall";
+e.textContent=a[Math.floor(Math.random()*a.length)];e.style.left=Math.random()*95+"vw";
+e.style.animationDuration=(2+Math.random()*3)+"s";document.body.appendChild(e);
+setTimeout(function(x){x.remove()},5500,e)}}
+document.getElementById("party").onclick=function(){rain(["🎉","🎈","🎂","🥳","🍰","🎊","🎁"],40)};
+rain(["🎉","🎈","🥳"],20);
+var h=location.hash.slice(1);if(h&&document.getElementById(h))go(h);
+</script>
+</body>
+</html>
